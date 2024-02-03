@@ -28,6 +28,8 @@ gem "jbuilder"
 
 gem "haml", "~> 6.3"
 
+gem 'friendly_id', '~> 5.5.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
