@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.2",
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/entrypoints:./app/assets/builds --no-source-map --load-path=node_modules --load-path=vendor/assets/stylesheets",
+    "build:js": "bun bun.config.js"
+  }
+}
