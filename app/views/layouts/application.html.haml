@@ -1,11 +1,35 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Predictit
-    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    %title 
+      PredictIt | 
+      = yield :title
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %meta{ name: "viewport", content: "width=device-width,initial-scale=1"}/
+    %meta{ name: "msapplication-TileColor", content: "#da532c"}/
+    %meta{ name: "theme-color", content: "#ffffff"}/
+    %link{ rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png"}
+    %link{ rel: "icon", type: "image/png", sizes:"32x32", href: "/favicon-32x32.png"}
+    %link{ rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png"}
+    %link{ rel: "manifest" ,href: "/site.webmanifest"}
+    %link{ rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#5bbad5"}
     = csrf_meta_tags
     = csp_meta_tag
+    = stylesheet_link_tag "libs", "data-turbo-track": "reload"
+    = stylesheet_link_tag "theme", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = yield :css
   %body
-    = yield
+    .container-scroller
+      = render "application/navbar"
+      .container-fluid.page-body-wrapper
+        = render "application/settings_panel"
+        = render "application/sidebar"
+        .main-panel
+          = yield
+          = render "application/footer"
+        / main-panel ends
+      / page-body-wrapper ends
+    / container-scroller
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    = yield :javascripts

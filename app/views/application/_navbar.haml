@@ -1,0 +1,19 @@
+/ partial:partials/_navbar.html
+%nav.navbar.col-lg-12.col-12.p-0.fixed-top.d-flex.flex-row
+  .text-center.navbar-brand-wrapper.d-flex.align-items-center.justify-content-center
+    %a.navbar-brand.brand-logo.mr-5{href: "/"}
+      %img.mr-2{alt: "logo", src: image_path("logo.png")}/
+    %a.navbar-brand.brand-logo-mini{href: "/"}
+      %img{alt: "logo", src: image_path("logo-mini.jpeg")}/
+  .navbar-menu-wrapper.d-flex.align-items-center.justify-content-end
+    %button.navbar-toggler.navbar-toggler.align-self-center{"data-toggle" => "minimize", type: "button"}
+      %span.icon-menu
+    %ul.navbar-nav.mr-lg-2
+      %li.nav-item.nav-search.d-none.d-lg-block
+        .input-group
+    %ul.navbar-nav.navbar-nav-right
+      %li.nav-item.dropdown
+      %li.nav-item.nav-profile.dropdown
+    %button.navbar-toggler.navbar-toggler-right.d-lg-none.align-self-center{"data-toggle" => "offcanvas", type: "button"}
+      %span.icon-menu
+/ partial
