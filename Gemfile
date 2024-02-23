@@ -67,6 +67,7 @@ group :development do
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
   gem "erb2haml", "~> 0.1.5"
+  gem "listen", "~> 3.8"
 end
 
 group :test do
